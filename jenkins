@@ -1,0 +1,29 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Kod Çekme') {
+            steps {
+                git 'https://github.com/kullanici/proje.git'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                sh 'echo Testler çalıştırılıyor...'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                sh 'echo Uygulama build ediliyor...'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                sh 'echo Deploy işlemi yapılıyor...'
+            }
+        }
+    }
+}
